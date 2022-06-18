@@ -1,59 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220618 12:53:47.513" rpa="false" schemaversion="3">
-<suite id="s1" name="TC 13" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_13.robot">
-<test id="s1-t1" name="TC_1" line="10">
-<kw name="launchBrowser" library="resources">
-<var>${app_title}</var>
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220618 13:10:43.432" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 14" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_14.robot">
+<test id="s1-t1" name="Scrolling_Test" line="6">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${appurl}</arg>
-<arg>${appbrowser}</arg>
+<arg>https://www.countries-ofthe-world.com/flags-of-the-world.html</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the given ``url``.</doc>
-<msg timestamp="20220618 12:53:47.807" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/index.php/auth/login'.</msg>
-<status status="PASS" starttime="20220618 12:53:47.807" endtime="20220618 12:54:00.032"/>
+<msg timestamp="20220618 13:10:43.714" level="INFO">Opening browser 'chrome' to base url 'https://www.countries-ofthe-world.com/flags-of-the-world.html'.</msg>
+<status status="PASS" starttime="20220618 13:10:43.714" endtime="20220618 13:10:59.015"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220618 12:54:00.032" endtime="20220618 12:54:00.171"/>
+<status status="PASS" starttime="20220618 13:10:59.016" endtime="20220618 13:10:59.147"/>
 </kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${title}</var>
-<doc>Returns the title of current page.</doc>
-<msg timestamp="20220618 12:54:00.176" level="INFO">${title} = OrangeHRM</msg>
-<status status="PASS" starttime="20220618 12:54:00.172" endtime="20220618 12:54:00.176"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220618 13:10:59.148" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220618 13:10:59.148" endtime="20220618 13:10:59.152"/>
 </kw>
-<msg timestamp="20220618 12:54:00.177" level="INFO">${app_title} = OrangeHRM</msg>
-<status status="PASS" starttime="20220618 12:53:47.805" endtime="20220618 12:54:00.177"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220618 13:11:01.158" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220618 13:10:59.152" endtime="20220618 13:11:01.159"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name:txtUsername</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20220618 12:54:00.179" level="INFO">Typing text 'Admin' into text field 'name:txtUsername'.</msg>
-<status status="PASS" starttime="20220618 12:54:00.178" endtime="20220618 12:54:00.277"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220618 13:11:01.164" level="INFO">Executing JavaScript:
+window.scrollTo(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220618 13:11:01.161" endtime="20220618 13:11:01.233"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtPassword</arg>
-<arg>admin123</arg>
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<msg timestamp="20220618 12:54:00.280" level="INFO">Typing text 'admin123' into text field 'id:txtPassword'.</msg>
-<status status="PASS" starttime="20220618 12:54:00.279" endtime="20220618 12:54:00.365"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${app_title}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220618 12:54:00.365" endtime="20220618 12:54:00.366"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${app_title}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220618 12:54:00.367" level="INFO">OrangeHRM</msg>
-<status status="PASS" starttime="20220618 12:54:00.366" endtime="20220618 12:54:00.367"/>
-</kw>
-<status status="PASS" starttime="20220618 12:53:47.804" endtime="20220618 12:54:00.367"/>
+<status status="PASS" starttime="20220618 13:10:43.713" endtime="20220618 13:11:01.234"/>
 </test>
-<status status="PASS" starttime="20220618 12:53:47.515" endtime="20220618 12:54:00.369"/>
+<status status="PASS" starttime="20220618 13:10:43.435" endtime="20220618 13:11:01.243"/>
 </suite>
 <statistics>
 <total>
@@ -62,7 +46,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 13">TC 13</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 14">TC 14</stat>
 </suite>
 </statistics>
 <errors>
