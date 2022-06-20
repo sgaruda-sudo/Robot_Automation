@@ -1,43 +1,893 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220618 13:10:43.432" rpa="false" schemaversion="3">
-<suite id="s1" name="TC 14" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_14.robot">
-<test id="s1-t1" name="Scrolling_Test" line="6">
+<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220620 00:35:13.472" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 16" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_16.robot">
+<test id="s1-t1" name="GetalllinksText" line="6">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.countries-ofthe-world.com/flags-of-the-world.html</arg>
+<arg>https://demo.guru99.com/test/newtours/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the given ``url``.</doc>
-<msg timestamp="20220618 13:10:43.714" level="INFO">Opening browser 'chrome' to base url 'https://www.countries-ofthe-world.com/flags-of-the-world.html'.</msg>
-<status status="PASS" starttime="20220618 13:10:43.714" endtime="20220618 13:10:59.015"/>
+<msg timestamp="20220620 00:35:13.772" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
+<status status="PASS" starttime="20220620 00:35:13.772" endtime="20220620 00:35:27.488"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220618 13:10:59.016" endtime="20220618 13:10:59.147"/>
+<status status="PASS" starttime="20220620 00:35:27.490" endtime="20220620 00:35:27.643"/>
 </kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220618 13:10:59.148" level="INFO">Executing JavaScript:
-window.scrollTo(0,document.body.scrollHeight)
-Without any arguments.</msg>
-<status status="PASS" starttime="20220618 13:10:59.148" endtime="20220618 13:10:59.152"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${links_count}</var>
+<arg>xpath://a</arg>
+<doc>Returns number of elements matching ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.669" level="INFO">${links_count} = 54</msg>
+<status status="PASS" starttime="20220620 00:35:27.644" endtime="20220620 00:35:27.669"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220618 13:11:01.158" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220618 13:10:59.152" endtime="20220618 13:11:01.159"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${links_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.669" endtime="20220620 00:35:27.670"/>
 </kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20220618 13:11:01.164" level="INFO">Executing JavaScript:
-window.scrollTo(0,-document.body.scrollHeight)
-Without any arguments.</msg>
-<status status="PASS" starttime="20220618 13:11:01.161" endtime="20220618 13:11:01.233"/>
+<kw name="Create List" library="BuiltIn">
+<var>@{Linkitems}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220620 00:35:27.672" level="INFO">@{Linkitems} = [ ]</msg>
+<status status="PASS" starttime="20220620 00:35:27.671" endtime="20220620 00:35:27.672"/>
 </kw>
-<status status="PASS" starttime="20220618 13:10:43.713" endtime="20220618 13:11:01.234"/>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${links_count}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.705" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.673" endtime="20220620 00:35:27.705"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.705" endtime="20220620 00:35:27.706"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.673" endtime="20220620 00:35:27.706"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.737" level="INFO">${linkTest} = Demo Site</msg>
+<status status="PASS" starttime="20220620 00:35:27.707" endtime="20220620 00:35:27.738"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.738" endtime="20220620 00:35:27.739"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.706" endtime="20220620 00:35:27.739"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.759" level="INFO">${linkTest} = Selenium</msg>
+<status status="PASS" starttime="20220620 00:35:27.739" endtime="20220620 00:35:27.759"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.759" endtime="20220620 00:35:27.759"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.739" endtime="20220620 00:35:27.759"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.779" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.759" endtime="20220620 00:35:27.779"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.779" endtime="20220620 00:35:27.780"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.759" endtime="20220620 00:35:27.780"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.840" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.780" endtime="20220620 00:35:27.840"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.841" endtime="20220620 00:35:27.841"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.780" endtime="20220620 00:35:27.841"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.862" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.841" endtime="20220620 00:35:27.862"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.862" endtime="20220620 00:35:27.863"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.841" endtime="20220620 00:35:27.863"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.881" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.863" endtime="20220620 00:35:27.881"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.882" endtime="20220620 00:35:27.882"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.863" endtime="20220620 00:35:27.882"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.901" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.882" endtime="20220620 00:35:27.901"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.901" endtime="20220620 00:35:27.901"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.882" endtime="20220620 00:35:27.901"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.919" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.902" endtime="20220620 00:35:27.919"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.919" endtime="20220620 00:35:27.920"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.901" endtime="20220620 00:35:27.920"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.940" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.920" endtime="20220620 00:35:27.940"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.940" endtime="20220620 00:35:27.940"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.920" endtime="20220620 00:35:27.940"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.959" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.941" endtime="20220620 00:35:27.959"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.959" endtime="20220620 00:35:27.959"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.940" endtime="20220620 00:35:27.959"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.976" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.959" endtime="20220620 00:35:27.976"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.977" endtime="20220620 00:35:27.977"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.959" endtime="20220620 00:35:27.977"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:27.995" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.977" endtime="20220620 00:35:27.995"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:27.996" endtime="20220620 00:35:27.996"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.977" endtime="20220620 00:35:27.996"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.016" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:27.996" endtime="20220620 00:35:28.016"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.016" endtime="20220620 00:35:28.016"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:27.996" endtime="20220620 00:35:28.016"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.037" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.017" endtime="20220620 00:35:28.037"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.037" endtime="20220620 00:35:28.037"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.016" endtime="20220620 00:35:28.038"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.059" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.039" endtime="20220620 00:35:28.059"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.059" endtime="20220620 00:35:28.060"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.038" endtime="20220620 00:35:28.060"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.079" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.060" endtime="20220620 00:35:28.079"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.079" endtime="20220620 00:35:28.079"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.060" endtime="20220620 00:35:28.079"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.100" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.080" endtime="20220620 00:35:28.100"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.100" endtime="20220620 00:35:28.100"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.080" endtime="20220620 00:35:28.101"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.127" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.101" endtime="20220620 00:35:28.127"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.127" endtime="20220620 00:35:28.127"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.101" endtime="20220620 00:35:28.128"/>
+</iter>
+<iter>
+<var name="${i}">20</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.148" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.128" endtime="20220620 00:35:28.148"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.148" endtime="20220620 00:35:28.149"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.128" endtime="20220620 00:35:28.149"/>
+</iter>
+<iter>
+<var name="${i}">21</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.168" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.149" endtime="20220620 00:35:28.168"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.168" endtime="20220620 00:35:28.169"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.149" endtime="20220620 00:35:28.169"/>
+</iter>
+<iter>
+<var name="${i}">22</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.188" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.169" endtime="20220620 00:35:28.189"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.189" endtime="20220620 00:35:28.189"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.169" endtime="20220620 00:35:28.189"/>
+</iter>
+<iter>
+<var name="${i}">23</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.209" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.190" endtime="20220620 00:35:28.209"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.209" endtime="20220620 00:35:28.210"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.189" endtime="20220620 00:35:28.210"/>
+</iter>
+<iter>
+<var name="${i}">24</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.232" level="INFO">${linkTest} = Insurance Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.210" endtime="20220620 00:35:28.232"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.232" endtime="20220620 00:35:28.232"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.210" endtime="20220620 00:35:28.232"/>
+</iter>
+<iter>
+<var name="${i}">25</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.254" level="INFO">${linkTest} = Agile Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.233" endtime="20220620 00:35:28.254"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.254" endtime="20220620 00:35:28.255"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.232" endtime="20220620 00:35:28.255"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.280" level="INFO">${linkTest} = Bank Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.255" endtime="20220620 00:35:28.280"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.281" endtime="20220620 00:35:28.281"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.255" endtime="20220620 00:35:28.281"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.303" level="INFO">${linkTest} = Security Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.281" endtime="20220620 00:35:28.304"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.304" endtime="20220620 00:35:28.305"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.281" endtime="20220620 00:35:28.305"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.326" level="INFO">${linkTest} = Telecom Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.305" endtime="20220620 00:35:28.326"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.326" endtime="20220620 00:35:28.326"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.305" endtime="20220620 00:35:28.326"/>
+</iter>
+<iter>
+<var name="${i}">29</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.347" level="INFO">${linkTest} = Payment Gateway Project</msg>
+<status status="PASS" starttime="20220620 00:35:28.327" endtime="20220620 00:35:28.347"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.347" endtime="20220620 00:35:28.348"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.326" endtime="20220620 00:35:28.348"/>
+</iter>
+<iter>
+<var name="${i}">30</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.368" level="INFO">${linkTest} = New Tours</msg>
+<status status="PASS" starttime="20220620 00:35:28.348" endtime="20220620 00:35:28.368"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.368" endtime="20220620 00:35:28.369"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.348" endtime="20220620 00:35:28.369"/>
+</iter>
+<iter>
+<var name="${i}">31</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.390" level="INFO">${linkTest} = SEO</msg>
+<status status="PASS" starttime="20220620 00:35:28.369" endtime="20220620 00:35:28.390"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.390" endtime="20220620 00:35:28.390"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.369" endtime="20220620 00:35:28.391"/>
+</iter>
+<iter>
+<var name="${i}">32</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.411" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.391" endtime="20220620 00:35:28.411"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.412" endtime="20220620 00:35:28.412"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.391" endtime="20220620 00:35:28.412"/>
+</iter>
+<iter>
+<var name="${i}">33</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.432" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.413" endtime="20220620 00:35:28.432"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.433" endtime="20220620 00:35:28.433"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.412" endtime="20220620 00:35:28.433"/>
+</iter>
+<iter>
+<var name="${i}">34</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.453" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.433" endtime="20220620 00:35:28.453"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.453" endtime="20220620 00:35:28.454"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.433" endtime="20220620 00:35:28.454"/>
+</iter>
+<iter>
+<var name="${i}">35</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.475" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.455" endtime="20220620 00:35:28.475"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.475" endtime="20220620 00:35:28.476"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.455" endtime="20220620 00:35:28.476"/>
+</iter>
+<iter>
+<var name="${i}">36</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.495" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.476" endtime="20220620 00:35:28.495"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.495" endtime="20220620 00:35:28.496"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.476" endtime="20220620 00:35:28.496"/>
+</iter>
+<iter>
+<var name="${i}">37</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.515" level="INFO">${linkTest} = </msg>
+<status status="PASS" starttime="20220620 00:35:28.496" endtime="20220620 00:35:28.515"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.515" endtime="20220620 00:35:28.516"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.496" endtime="20220620 00:35:28.516"/>
+</iter>
+<iter>
+<var name="${i}">38</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.540" level="INFO">${linkTest} = Home</msg>
+<status status="PASS" starttime="20220620 00:35:28.516" endtime="20220620 00:35:28.540"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.540" endtime="20220620 00:35:28.541"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.516" endtime="20220620 00:35:28.541"/>
+</iter>
+<iter>
+<var name="${i}">39</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.561" level="INFO">${linkTest} = Flights</msg>
+<status status="PASS" starttime="20220620 00:35:28.541" endtime="20220620 00:35:28.561"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.563" endtime="20220620 00:35:28.563"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.541" endtime="20220620 00:35:28.563"/>
+</iter>
+<iter>
+<var name="${i}">40</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.583" level="INFO">${linkTest} = Hotels</msg>
+<status status="PASS" starttime="20220620 00:35:28.563" endtime="20220620 00:35:28.583"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.583" endtime="20220620 00:35:28.584"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.563" endtime="20220620 00:35:28.584"/>
+</iter>
+<iter>
+<var name="${i}">41</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.615" level="INFO">${linkTest} = Car Rentals</msg>
+<status status="PASS" starttime="20220620 00:35:28.584" endtime="20220620 00:35:28.615"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.616" endtime="20220620 00:35:28.616"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.584" endtime="20220620 00:35:28.616"/>
+</iter>
+<iter>
+<var name="${i}">42</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.637" level="INFO">${linkTest} = Cruises</msg>
+<status status="PASS" starttime="20220620 00:35:28.616" endtime="20220620 00:35:28.637"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.637" endtime="20220620 00:35:28.638"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.616" endtime="20220620 00:35:28.638"/>
+</iter>
+<iter>
+<var name="${i}">43</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.659" level="INFO">${linkTest} = Destinations</msg>
+<status status="PASS" starttime="20220620 00:35:28.639" endtime="20220620 00:35:28.659"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.660" endtime="20220620 00:35:28.660"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.638" endtime="20220620 00:35:28.660"/>
+</iter>
+<iter>
+<var name="${i}">44</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.689" level="INFO">${linkTest} = Vacations</msg>
+<status status="PASS" starttime="20220620 00:35:28.660" endtime="20220620 00:35:28.689"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.689" endtime="20220620 00:35:28.690"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.660" endtime="20220620 00:35:28.690"/>
+</iter>
+<iter>
+<var name="${i}">45</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.731" level="INFO">${linkTest} = SIGN-ON</msg>
+<status status="PASS" starttime="20220620 00:35:28.691" endtime="20220620 00:35:28.731"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.731" endtime="20220620 00:35:28.731"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.690" endtime="20220620 00:35:28.731"/>
+</iter>
+<iter>
+<var name="${i}">46</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.758" level="INFO">${linkTest} = REGISTER</msg>
+<status status="PASS" starttime="20220620 00:35:28.732" endtime="20220620 00:35:28.758"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.758" endtime="20220620 00:35:28.759"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.732" endtime="20220620 00:35:28.759"/>
+</iter>
+<iter>
+<var name="${i}">47</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.785" level="INFO">${linkTest} = SUPPORT</msg>
+<status status="PASS" starttime="20220620 00:35:28.759" endtime="20220620 00:35:28.785"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.785" endtime="20220620 00:35:28.786"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.759" endtime="20220620 00:35:28.786"/>
+</iter>
+<iter>
+<var name="${i}">48</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.812" level="INFO">${linkTest} = CONTACT</msg>
+<status status="PASS" starttime="20220620 00:35:28.786" endtime="20220620 00:35:28.812"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.812" endtime="20220620 00:35:28.813"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.786" endtime="20220620 00:35:28.813"/>
+</iter>
+<iter>
+<var name="${i}">49</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.837" level="INFO">${linkTest} = your destination</msg>
+<status status="PASS" starttime="20220620 00:35:28.813" endtime="20220620 00:35:28.838"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.838" endtime="20220620 00:35:28.839"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.813" endtime="20220620 00:35:28.839"/>
+</iter>
+<iter>
+<var name="${i}">50</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.863" level="INFO">${linkTest} = featured vacation destinations</msg>
+<status status="PASS" starttime="20220620 00:35:28.839" endtime="20220620 00:35:28.863"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.864" endtime="20220620 00:35:28.864"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.839" endtime="20220620 00:35:28.864"/>
+</iter>
+<iter>
+<var name="${i}">51</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.892" level="INFO">${linkTest} = Register here</msg>
+<status status="PASS" starttime="20220620 00:35:28.864" endtime="20220620 00:35:28.892"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.893" endtime="20220620 00:35:28.893"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.864" endtime="20220620 00:35:28.894"/>
+</iter>
+<iter>
+<var name="${i}">52</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.917" level="INFO">${linkTest} = Business Travel @ About.com</msg>
+<status status="PASS" starttime="20220620 00:35:28.894" endtime="20220620 00:35:28.917"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.917" endtime="20220620 00:35:28.917"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.894" endtime="20220620 00:35:28.917"/>
+</iter>
+<iter>
+<var name="${i}">53</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkTest}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<msg timestamp="20220620 00:35:28.939" level="INFO">${linkTest} = Salon Travel</msg>
+<status status="PASS" starttime="20220620 00:35:28.918" endtime="20220620 00:35:28.939"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkTest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220620 00:35:28.939" endtime="20220620 00:35:28.940"/>
+</kw>
+<status status="PASS" starttime="20220620 00:35:28.917" endtime="20220620 00:35:28.940"/>
+</iter>
+<status status="PASS" starttime="20220620 00:35:27.672" endtime="20220620 00:35:28.940"/>
+</for>
+<status status="PASS" starttime="20220620 00:35:13.771" endtime="20220620 00:35:28.940"/>
 </test>
-<status status="PASS" starttime="20220618 13:10:43.435" endtime="20220618 13:11:01.243"/>
+<status status="PASS" starttime="20220620 00:35:13.478" endtime="20220620 00:35:28.942"/>
 </suite>
 <statistics>
 <total>
@@ -46,7 +896,7 @@ Without any arguments.</msg>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 14">TC 14</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 16">TC 16</stat>
 </suite>
 </statistics>
 <errors>
