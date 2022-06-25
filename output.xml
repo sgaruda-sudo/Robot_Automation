@@ -1,45 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220625 14:45:57.789" rpa="false" schemaversion="3">
-<suite id="s1" name="TC 19" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_19.robot">
-<test id="s1-t1" name="TC_1 User Registration" line="3">
-<kw name="Log To Console" library="BuiltIn">
-<arg>This is user registration test</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220625 14:45:57.829" endtime="20220625 14:45:57.830"/>
+<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220625 16:26:20.027" rpa="false" schemaversion="3">
+<suite id="s1" name="Registration" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\Design_Pattern\Test_Cases\Registration.robot">
+<test id="s1-t1" name="Registration_Test" line="11">
+<kw name="Open my browser" library="RegistrationKeywords">
+<arg>${site_url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${site_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<msg timestamp="20220625 16:26:20.318" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/index.php'.</msg>
+<status status="PASS" starttime="20220625 16:26:20.318" endtime="20220625 16:26:33.236"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Registration Test is over</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220625 14:45:57.831" endtime="20220625 14:45:57.832"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220625 16:26:33.237" endtime="20220625 16:26:33.384"/>
 </kw>
-<tag>regression</tag>
-<status status="PASS" starttime="20220625 14:45:57.828" endtime="20220625 14:45:57.832"/>
+<status status="PASS" starttime="20220625 16:26:20.317" endtime="20220625 16:26:33.384"/>
+</kw>
+<kw name="Click registartion Link" library="RegistrationKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${link_reg}</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20220625 16:26:33.386" level="INFO">Clicking button 'xpath://a[contains(text(),'REGISTER')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20220625 16:26:33.754" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220625 16:26:33.427" endtime="20220625 16:26:33.754"/>
+</kw>
+<msg timestamp="20220625 16:26:33.756" level="FAIL">Button with locator 'xpath://a[contains(text(),'REGISTER')]' not found.</msg>
+<status status="FAIL" starttime="20220625 16:26:33.385" endtime="20220625 16:26:33.759"/>
+</kw>
+<status status="FAIL" starttime="20220625 16:26:33.384" endtime="20220625 16:26:33.760"/>
+</kw>
+<kw name="Enter Name" library="RegistrationKeywords">
+<arg>.</arg>
+<status status="NOT RUN" starttime="20220625 16:26:33.760" endtime="20220625 16:26:33.760"/>
+</kw>
+<kw name="Enter LastName" library="RegistrationKeywords">
+<arg>.</arg>
+<status status="NOT RUN" starttime="20220625 16:26:33.761" endtime="20220625 16:26:33.761"/>
+</kw>
+<kw name="Clicking Submit" library="RegistrationKeywords">
+<status status="NOT RUN" starttime="20220625 16:26:33.761" endtime="20220625 16:26:33.762"/>
+</kw>
+<kw name="Click Sucessfull" library="RegistrationKeywords">
+<status status="NOT RUN" starttime="20220625 16:26:33.762" endtime="20220625 16:26:33.762"/>
+</kw>
+<status status="FAIL" starttime="20220625 16:26:20.316" endtime="20220625 16:26:33.763">Button with locator 'xpath://a[contains(text(),'REGISTER')]' not found.</status>
 </test>
-<test id="s1-t2" name="TC_3 Change User Settings" line="13">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Chaging user settings test</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220625 14:45:57.834" endtime="20220625 14:45:57.835"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Change user settings test over</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220625 14:45:57.835" endtime="20220625 14:45:57.835"/>
-</kw>
-<tag>regression</tag>
-<status status="PASS" starttime="20220625 14:45:57.834" endtime="20220625 14:45:57.836"/>
-</test>
-<status status="PASS" starttime="20220625 14:45:57.792" endtime="20220625 14:45:57.837"/>
+<status status="FAIL" starttime="20220625 16:26:20.029" endtime="20220625 16:26:33.765"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">regression</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TC 19">TC 19</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Registration">Registration</stat>
 </suite>
 </statistics>
 <errors>
