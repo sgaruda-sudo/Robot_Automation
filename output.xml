@@ -1,96 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220621 00:13:27.738" rpa="false" schemaversion="3">
-<suite id="s1" name="TC 17" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_17.robot">
-<test id="s1-t1" name="TableTC" line="6">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://testautomationpractice.blogspot.com/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<msg timestamp="20220621 00:13:28.026" level="INFO">Opening browser 'chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
-<status status="PASS" starttime="20220621 00:13:28.026" endtime="20220621 00:13:41.146"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220621 00:13:41.147" endtime="20220621 00:13:41.295"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${rows}</var>
-<arg>xpath://body/div[4]/div[2]/div[2]/div[2]/footer[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody/tr</arg>
-<doc>Returns number of elements matching ``locator``.</doc>
-<msg timestamp="20220621 00:13:41.329" level="INFO">${rows} = 7</msg>
-<status status="PASS" starttime="20220621 00:13:41.295" endtime="20220621 00:13:41.330"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${columns}</var>
-<arg>xpath://body/div[4]/div[2]/div[2]/div[2]/footer[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody/tr/th</arg>
-<doc>Returns number of elements matching ``locator``.</doc>
-<msg timestamp="20220621 00:13:41.359" level="INFO">${columns} = 4</msg>
-<status status="PASS" starttime="20220621 00:13:41.330" endtime="20220621 00:13:41.359"/>
+<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220625 14:45:57.789" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 19" source="C:\Users\Sampath\PycharmProjects\pythonProject13\Automation\TestCases\TC_19.robot">
+<test id="s1-t1" name="TC_1 User Registration" line="3">
+<kw name="Log To Console" library="BuiltIn">
+<arg>This is user registration test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220625 14:45:57.829" endtime="20220625 14:45:57.830"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${rows},${columns}</arg>
+<arg>Registration Test is over</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220621 00:13:41.360" endtime="20220621 00:13:41.361"/>
+<status status="PASS" starttime="20220625 14:45:57.831" endtime="20220625 14:45:57.832"/>
 </kw>
-<status status="PASS" starttime="20220621 00:13:28.025" endtime="20220621 00:13:41.362"/>
+<tag>regression</tag>
+<status status="PASS" starttime="20220625 14:45:57.828" endtime="20220625 14:45:57.832"/>
 </test>
-<test id="s1-t2" name="CaptureDataFromTable" line="13">
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${text_row_5}</var>
-<arg>xpath://body/div[4]/div[2]/div[2]/div[2]/footer[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody/tr[5]</arg>
-<doc>Returns the text value of element identified by ``locator``.</doc>
-<msg timestamp="20220621 00:13:41.424" level="INFO">${text_row_5} = Master In Selenium Mukesh Selenium 3000</msg>
-<status status="PASS" starttime="20220621 00:13:41.371" endtime="20220621 00:13:41.425"/>
+<test id="s1-t2" name="TC_3 Change User Settings" line="13">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Chaging user settings test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220625 14:45:57.834" endtime="20220625 14:45:57.835"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${text_row_5}</arg>
+<arg>Change user settings test over</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220621 00:13:41.426" endtime="20220621 00:13:41.427"/>
+<status status="PASS" starttime="20220625 14:45:57.835" endtime="20220625 14:45:57.835"/>
 </kw>
-<status status="PASS" starttime="20220621 00:13:41.365" endtime="20220621 00:13:41.430"/>
+<tag>regression</tag>
+<status status="PASS" starttime="20220625 14:45:57.834" endtime="20220625 14:45:57.836"/>
 </test>
-<test id="s1-t3" name="ValidateDataFromTable_Correctcolumnname" line="17">
-<kw name="Table Column Should Contain" library="SeleniumLibrary">
-<arg>//table[@name="BookTable"]</arg>
-<arg>2</arg>
-<arg>Author</arg>
-<doc>Verifies table column contains text ``expected``.</doc>
-<status status="PASS" starttime="20220621 00:13:41.439" endtime="20220621 00:13:41.513"/>
-</kw>
-<kw name="Table Row Should Contain" library="SeleniumLibrary">
-<arg>//table[@name="BookTable"]</arg>
-<arg>4</arg>
-<arg>Learn JS</arg>
-<doc>Verifies that table row contains text ``expected``.</doc>
-<status status="PASS" starttime="20220621 00:13:41.514" endtime="20220621 00:13:41.561"/>
-</kw>
-<kw name="Table Cell Should Contain" library="SeleniumLibrary">
-<arg>//table[@name="BookTable"]</arg>
-<arg>5</arg>
-<arg>2</arg>
-<arg>Mukesh</arg>
-<doc>Verifies table cell contains text ``expected``.</doc>
-<msg timestamp="20220621 00:13:41.613" level="INFO">Table cell contains 'Mukesh'.</msg>
-<status status="PASS" starttime="20220621 00:13:41.562" endtime="20220621 00:13:41.614"/>
-</kw>
-<kw name="Table Header Should Contain" library="SeleniumLibrary">
-<arg>//table[@name="BookTable"]</arg>
-<arg>BookName</arg>
-<doc>Verifies table header contains text ``expected``.</doc>
-<status status="PASS" starttime="20220621 00:13:41.617" endtime="20220621 00:13:41.649"/>
-</kw>
-<status status="PASS" starttime="20220621 00:13:41.437" endtime="20220621 00:13:41.651"/>
-</test>
-<status status="PASS" starttime="20220621 00:13:27.741" endtime="20220621 00:13:41.653"/>
+<status status="PASS" starttime="20220625 14:45:57.792" endtime="20220625 14:45:57.837"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="2" fail="0" skip="0">regression</stat>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="TC 17">TC 17</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC 19">TC 19</stat>
 </suite>
 </statistics>
 <errors>
